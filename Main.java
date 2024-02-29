@@ -153,10 +153,12 @@ class CalculoQC{
 class Tabuada{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Escolha um número para exibir a tabuada\nOpçao: ");
+        System.out.println("Escolha um número para exibir a tabuada: ");
         int tabuada = scanner.nextInt();
+        System.out.println("Quer que "+tabuada+" seja multiplicado até que número? ");
+        int ateNumero = scanner.nextInt();
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= ateNumero; i++) {
             System.out.println(i+" x "+tabuada+" = "+tabuada*i);
         }
     }
