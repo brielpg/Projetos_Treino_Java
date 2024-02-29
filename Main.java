@@ -10,14 +10,26 @@ public class Main {
 class Senha{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String usuario = "admin";
         String senhaDB = "12345";
-        System.out.println("Digite sua Senha: ");
-        String senhaDigitada = scanner.nextLine();
+        boolean ligado = true;
+        int seguranca = 0;
 
-        if (senhaDigitada.equals(senhaDB)) {
-            System.out.println("Acesso autorizado!");
-        } else {
-            System.out.println("Senha incorreta.");
+        while (ligado){
+            System.out.println("Login: ");
+            String usuarioDigitado = scanner.nextLine();
+            System.out.println("Senha: ");
+            String senhaDigitada = scanner.nextLine();
+
+            if (seguranca >= 3){
+                ligado = false;
+            }else if (senhaDigitada.equals(senhaDB) && usuarioDigitado.equals(usuario)) {
+                System.out.println("Acesso autorizado!");
+                break;
+            } else {
+                System.out.println("Senha ou Usuário incorreto.");
+                seguranca+=1;
+        }
         }
     }
 }
